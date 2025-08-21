@@ -1,0 +1,7 @@
+,Accuracy,Precision,Recall,F1-Score
+Random Forest,0.9568,0.9567,0.9568,0.9567
+Gradient Boosting,0.9582,0.9578,0.9582,0.9574
+AdaBoost,0.9582,0.9578,0.9582,0.9574
+SVM,0.9568,0.9567,0.9568,0.9567
+Logistic Regression,0.8801,0.8757,0.8801,0.8769
+Voting Ensemble,0.9568,0.9567,0.9568,0.9567
