@@ -12,10 +12,10 @@ import numpy as np
 
 # This function loads the trained model and preprocessing objects (imputers)
 # The @st.cache_resource decorator ensures this is loaded only once, improving performance.
-@st.cache(allow_output_mutation=True)
+@st.cache_resource
 def load_model():
     try:
-        # Load the dictionary containing the model and imputers
+        # Load the dictionary containing the model and preprocessing objects
         model_data = joblib.load('hepatitis_prediction_model.joblib')
         return model_data
     except FileNotFoundError:
@@ -37,8 +37,9 @@ mode_imputer = imputers['mode']
 numerical_cols = imputers['num_cols']
 categorical_cols = imputers['cat_cols']
 
-
+# ==============================================================================
 # 3. SETTING UP THE STREAMLIT USER INTERFACE
+# ==============================================================================
 
 # Set the title and a description for the web app
 st.title("🩺 Hepatitis B Prediction System")
@@ -113,7 +114,9 @@ def user_input_features():
 # Get the user input
 input_df = user_input_features()
 
+# ==============================================================================
 # 4. PREDICTION AND DISPLAYING THE OUTPUT
+# ==============================================================================
 
 # Display the user's input data in the main area
 st.subheader('Patient Input Parameters')
